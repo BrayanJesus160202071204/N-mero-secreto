@@ -34,7 +34,7 @@
         <p>Elige un número entre 1 y 10</p>
 
         <input type="number" id="inputUsuario" min="1" max="10">
-        <button id="botonAdivinar"></button>
+        <button id="botonAdivinar">adivinar</button>
         <p id="mensaje"></p>
         <button id="botonReiniciar">Jugar de nuevo</button>
     <script>
@@ -55,10 +55,10 @@
             //Comparamos el número del usuario con el número secreto
             if(numeroSecreto === numeroUsuario){
             mostrarMensaje('¡Correcto! Adivinaste en ' + intentos + ' intentos🎉');
-            } else if (numeroUsuario === numeroSecreto){
+            } else if (numeroUsuario > numeroSecreto){
                 mostrarMensaje('El numero Secreto es menor, Intenta de nuevo');
             }else{
-                mostrarMensaje('El numero Secreto es mayor, Intent de nuevo');
+                mostrarMensaje('El numero Secreto es mayor, Intenta de nuevo');
             }
             //Limpiar la entrada para el siguiente intento
             document.getElementById('inputUsuario').value ='';
@@ -75,6 +75,9 @@
             document.getElementById('imputUsuario').value = '';
             document.getElementById('botonAdivinar').disabled.false;
         }
+    // Conectar los btones con las funcions, sin esto los botones no hacen nada
+    document.getElementById('botonAdivinar').addEventListener('click', adivinar);
+    document.getElementById('botonReiniciar').addEventListener('click', reiniciarJuego);
     </script>
     </body>
 </html>
