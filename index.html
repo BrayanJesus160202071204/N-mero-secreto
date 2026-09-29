@@ -34,6 +34,8 @@
         <p>Elige un número entre 1 y 10</p>
 
         <input type="number" id="inputUsuario" min="1" max="10">
+        <button id="botonAdivinar"></button>
+        <p id="mensaje"></p>
         <button id="botonReiniciar">Jugar de nuevo</button>
     <script>
         //Variables
@@ -67,7 +69,11 @@
         }
         //Funcion reiniciar juego
         function reiniciarJuego(){
-            
+            numeroSecreto = generarNumeroSecreto();
+            intentos = 0;
+            mostrarMensaje ('');
+            document.getElementById('imputUsuario').value = '';
+            document.getElementById('botonAdivinar').disabled.false;
         }
     </script>
     </body>
